@@ -18,10 +18,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinarySearch.cpp">
+    <ClCompile Include="BinarySearchTree\BinarySearch.cpp">
       <Filter>源文件\BinarySearchTree</Filter>
     </ClCompile>
-    <ClCompile Include="BinarySearchTree.cpp">
+    <ClCompile Include="BinarySearchTree\BinarySearchTree.cpp">
       <Filter>源文件\BinarySearchTree</Filter>
     </ClCompile>
   </ItemGroup>
