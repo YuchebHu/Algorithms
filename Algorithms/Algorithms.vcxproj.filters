@@ -25,4 +25,9 @@
       <Filter>源文件\BinarySearchTree</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="BinarySearchTree\bible.txt">
+      <Filter>源文件\BinarySearchTree</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

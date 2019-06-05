@@ -46,6 +46,18 @@ public:
 		return __search(root, key);
 	}
 
+	void preOrder() {
+		__preOrder(root);
+	}
+
+	void inOrder() {
+		__inOrder(root);
+	}
+
+	void postOrder() {
+		__postOrder(root);
+	}
+
 private:
 	Node* __insert(Node* node, Key key, Value value) {
 		
@@ -90,8 +102,33 @@ private:
 		else
 			return __search(node->right, key);
 	}
+
+	void __preOrder(Node* node) {
+		if (node != NULL) {
+			std::cout << node->key << std::endl;
+			__preOrder(node->left);
+			__preOrder(node->right);
+		}
+	}
+
+	void __inOrder(Node* node) {
+		if (node != NULL) {
+			__inOrder(node->left);
+			std::cout << node->key << std::endl;
+			__inOrder(node->right);
+		}
+	}
+
+	void __postOrder(Node* node) {
+		if (node != NULL) {
+			__postOrder(node->left);
+			__postOrder(node->right);
+			std::cout << node->key << std::endl;
+		}
+	}
 };
 
 int main() {
+	
 	return 0;
 }

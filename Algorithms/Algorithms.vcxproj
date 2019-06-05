@@ -19,8 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinarySearchTree\BinarySearch.cpp" />
+    <ClCompile Include="BinarySearchTree\BinarySearch.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="BinarySearchTree\BinarySearchTree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="BinarySearchTree\bible.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
