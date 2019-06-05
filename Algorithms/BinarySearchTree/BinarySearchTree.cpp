@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <queue>
 template <typename Key, typename Value>
 class BST {
 private:
@@ -58,9 +58,29 @@ public:
 		__postOrder(root);
 	}
 
+	void destory() {
+		__destory(root);
+	}
+
+	void levelOrder() {
+		std::queue<Node*> queue;
+		queue.push(node);
+
+		while (!queue.empty()) {
+			Node* tempNode = queue.front();
+			queue.pop();
+
+			std::cout << tempNode->key << ": " << tempNode->value << std::endl;
+
+			if (tempNode->left != NULL)
+				queue.push(tempNode->left);
+			if (tempNode->right != NULL)
+				queue.push(tempNode->right);
+		}
+	}
 private:
-	Node* __insert(Node* node, Key key, Value value) {
-		
+	Node* __insert(Node * node, Key key, Value value) {
+
 		if (node == NULL) {
 			++count;
 			return new Node(key, value);
@@ -77,7 +97,7 @@ private:
 		return node;
 	}
 
-	bool __contain(Node* node, Key key) {
+	bool __contain(Node * node, Key key) {
 		if (node == NULL) {
 			return false;
 		}
@@ -90,7 +110,7 @@ private:
 			return __contain(node->right, key);
 	}
 
-	Value* __search(Node* node, Key key) {
+	Value* __search(Node * node, Key key) {
 		if (node == NULL) {
 			return NULL;
 		}
@@ -103,7 +123,7 @@ private:
 			return __search(node->right, key);
 	}
 
-	void __preOrder(Node* node) {
+	void __preOrder(Node * node) {
 		if (node != NULL) {
 			std::cout << node->key << std::endl;
 			__preOrder(node->left);
@@ -111,7 +131,7 @@ private:
 		}
 	}
 
-	void __inOrder(Node* node) {
+	void __inOrder(Node * node) {
 		if (node != NULL) {
 			__inOrder(node->left);
 			std::cout << node->key << std::endl;
@@ -119,16 +139,27 @@ private:
 		}
 	}
 
-	void __postOrder(Node* node) {
+	void __postOrder(Node * node) {
 		if (node != NULL) {
 			__postOrder(node->left);
 			__postOrder(node->right);
 			std::cout << node->key << std::endl;
 		}
 	}
+
+	void __destory(Node * node) {
+		if (node != NULL) {
+			__destory(node->left);
+			__destory(node->right);
+
+			delete node;
+			--count;
+		}
+	}
+
 };
 
 int main() {
-	
+
 	return 0;
 }
