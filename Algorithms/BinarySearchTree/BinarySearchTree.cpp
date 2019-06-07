@@ -16,6 +16,14 @@ private:
 			this->value = value;
 			this->left = this->right = NULL;
 		}
+
+		Node(Node* node) {
+			this->key = node->key;
+			this->value = node->value;
+			this->left = node->left;
+			this->right = node->right;
+
+		}
 	};
 
 	Node* root;
@@ -84,6 +92,10 @@ public:
 	void removeMax() {
 		if (root != NULL)
 			root = __removeMax(root);
+	}
+
+	void remove(Key key) {
+		root = __remove(root, key);
 	}
 
 private:
@@ -190,7 +202,7 @@ private:
 		return node;
 	}
 
-	Node* __removeMax(Node* node) {
+	Node* __removeMax(Node * node) {
 		if (node->right == NULL) {
 			Node* leftNode = node->left;
 			delete node;
@@ -200,6 +212,47 @@ private:
 
 		node->right = __removeMax(node->right);
 		return node;
+	}
+
+	Node* __remove(Node * node, Key key) {
+		if (node == NULL) {
+			return NULL;
+		}
+
+		if (key < node->key) {
+			node->left = remove(node->left, key);
+			return node;
+		}
+		else if (key > node->key) {
+			node->right = remove(node->right, key);
+			return node;
+		}
+		else {
+			if (node->left == NULL) {
+				Node* rightNode = node->right;
+				delete node;
+				--count;
+				return rightNode;
+			}
+			else if (node->right == NULL) {
+				Node* leftNode = node->left;
+				delete node;
+				--count;
+				return leftNode;
+			}
+			else {
+				Node* successor(__minimum(node->right));
+				++count;
+
+				successor->right = __removeMin(node->right);
+				successor->left = node->left;
+
+				delete node;
+				--count;
+
+				return successor;
+			}
+		}
 	}
 };
 
