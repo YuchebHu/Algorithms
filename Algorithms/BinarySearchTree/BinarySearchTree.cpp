@@ -1,5 +1,7 @@
+#include <cassert>
 #include <iostream>
 #include <queue>
+
 template <typename Key, typename Value>
 class BST {
 private:
@@ -20,51 +22,34 @@ private:
 	int count;
 
 public:
-	BST() :root(NULL), count(0) {}
-
-	~BST() {
-		// TODO: ~BST()
+	BST()
+		: root(NULL)
+		, count(0) {
 	}
 
-	bool isEmpty() {
-		return count == 0;
-	}
+	~BST() { destory(); }
 
-	int size() {
-		return count;
-	}
+	bool isEmpty() { return count == 0; }
 
-	void insert(Key key, Value value) {
-		root = __insert(root, key, value);
-	}
+	int size() { return count; }
 
-	bool contain(Key key) {
-		return __contain(root, key);
-	}
+	void insert(Key key, Value value) { root = __insert(root, key, value); }
 
-	Value* search(Key key) {
-		return __search(root, key);
-	}
+	bool contain(Key key) { return __contain(root, key); }
 
-	void preOrder() {
-		__preOrder(root);
-	}
+	Value* search(Key key) { return __search(root, key); }
 
-	void inOrder() {
-		__inOrder(root);
-	}
+	void preOrder() { __preOrder(root); }
 
-	void postOrder() {
-		__postOrder(root);
-	}
+	void inOrder() { __inOrder(root); }
 
-	void destory() {
-		__destory(root);
-	}
+	void postOrder() { __postOrder(root); }
+
+	void destory() { __destory(root); }
 
 	void levelOrder() {
 		std::queue<Node*> queue;
-		queue.push(node);
+		queue.push(root);
 
 		while (!queue.empty()) {
 			Node* tempNode = queue.front();
@@ -78,9 +63,31 @@ public:
 				queue.push(tempNode->right);
 		}
 	}
+
+	Key minimum() {
+		assert(count != 0);
+		Node * minNode = __minimum(root);
+		return minNode->key;
+	}
+
+	Key maximum() {
+		assert(count != 0);
+		Node * maxNode = __maximum(root);
+		return maxNode->key;
+	}
+
+	void removeMin() {
+		if (root != NULL)
+			root = __removeMin(root);
+	}
+
+	void removeMax() {
+		if (root != NULL)
+			root = __removeMax(root);
+	}
+
 private:
 	Node* __insert(Node * node, Key key, Value value) {
-
 		if (node == NULL) {
 			++count;
 			return new Node(key, value);
@@ -157,9 +164,47 @@ private:
 		}
 	}
 
+	Node* __minimum(Node * node) {
+		if (node->left == NULL)
+			return node;
+
+		return __minimum(node->left);
+	}
+
+	Node* __maximum(Node * node) {
+		if (node->right == NULL)
+			return node;
+
+		return __maximum(node->right);
+	}
+
+	Node* __removeMin(Node * node) {
+		if (node->left == NULL) {
+			Node* rightNode = node->right;
+			delete node;
+			--count;
+			return rightNode;
+		}
+
+		node->left = __removeMin(node->left);
+		return node;
+	}
+
+	Node* __removeMax(Node* node) {
+		if (node->right == NULL) {
+			Node* leftNode = node->left;
+			delete node;
+			--count;
+			return leftNode;
+		}
+
+		node->right = __removeMax(node->right);
+		return node;
+	}
 };
 
 int main() {
+	BST<char, int> tree;
 
 	return 0;
 }
