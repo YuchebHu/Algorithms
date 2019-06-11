@@ -22,10 +22,18 @@
     <ClCompile Include="BinarySearchTree\BinarySearch.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="BinarySearchTree\BinarySearchTree.cpp" />
+    <ClCompile Include="BinarySearchTree\BinarySearchTree.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="UnionFind\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="BinarySearchTree\bible.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UnionFind\UnionFind1.h" />
+    <ClInclude Include="UnionFind\UnionFind2.h" />
+    <ClInclude Include="UnionFind\UnionFindTestHelper.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
