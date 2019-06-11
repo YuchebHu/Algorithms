@@ -46,7 +46,7 @@ namespace UF5 {
 			if (pRoot == qRoot)
 				return;
 
-			if (rank[pRoot] > rank[qRook])
+			if (rank[pRoot] > rank[qRoot])
 				parent[qRoot] = pRoot;
 			else if (rank[pRoot] < rank[qRoot])
 				parent[pRoot] = qRoot;
