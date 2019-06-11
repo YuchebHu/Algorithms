@@ -6,9 +6,10 @@
 
 namespace UF3 {
 	class UnionFind {
+	// 
 	private:
 		int* parent;
-		int* sz;	// sz为以对应元素的根节点的总元素个数
+		int* sz;	// sz[i]表示以i为根的集合所表示的树节点的个数
 		int count;
 	public:
 		UnionFind(int n) : count(n) {

@@ -8,22 +8,22 @@ namespace UF4 {
 	class UnionFind {
 	private:
 		int* parent;
-		int* sz;
+		int* rank; // rank[i]表示以i为根的集合所表示树的层数
 		int count;
 
 	public:
 		UnionFind(int n) : count(n) {
 			parent = new int[n];
-			sz = new int[n];
+			rank = new int[n];
 			for (int i = 0; i < n; ++i) {
 				parent[i] = i;
-				sz[i] = 1;
+				rank[i] = 1;
 			}
 		}
 
 		~UnionFind() {
 			delete[] parent;
-			delete[] sz;
+			delete[] rank;
 		}
 
 		int find(int p) {
@@ -44,12 +44,16 @@ namespace UF4 {
 			if (pRoot == qRoot)
 				return;
 
-			if (sz[pRoot] > sz[qRoot]) {
+			if (rank[pRoot] > rank[qRoot]) {
 				parent[qRoot] = pRoot;
-				sz[pRoot] += sz[qRoot];
 			}
-			else {
+			else if (rank[pRoot] < rank[qRoot]) {
 				parent[pRoot] = qRoot;
-				sz[qRoot] += sz[pRoot];
-		};
+			}
+			else { // rank[pRoot] == rank[qRoot] 
+				parent[pRoot] = qRoot;
+				rank[qRoot] += 1;
+			}
+		}
+	};
 }

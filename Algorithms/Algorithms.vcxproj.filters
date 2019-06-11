@@ -52,5 +52,8 @@
     <ClInclude Include="UnionFind\UnionFind4.h">
       <Filter>源文件\UnionFind</Filter>
     </ClInclude>
+    <ClInclude Include="UnionFind\UnionFind5.h">
+      <Filter>源文件\UnionFind</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -35,6 +35,7 @@
     <ClInclude Include="UnionFind\UnionFind2.h" />
     <ClInclude Include="UnionFind\UnionFind3.h" />
     <ClInclude Include="UnionFind\UnionFind4.h" />
+    <ClInclude Include="UnionFind\UnionFind5.h" />
     <ClInclude Include="UnionFind\UnionFindTestHelper.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
