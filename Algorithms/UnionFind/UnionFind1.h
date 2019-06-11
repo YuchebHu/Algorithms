@@ -8,7 +8,6 @@ namespace UF1 {
 	// quick find
 	class UnionFind {
 	private:
-		//std::vector<int> id;
 		int* id;
 		int count;
 

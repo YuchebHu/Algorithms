@@ -1,31 +1,35 @@
 #pragma once
 
 #include <iostream>
-#include <vector>
 #include <cassert>
 
-namespace UF2 {
-	// quick union
+namespace UF4 {
+	//
 	class UnionFind {
 	private:
 		int* parent;
+		int* sz;
 		int count;
 
 	public:
 		UnionFind(int n) : count(n) {
 			parent = new int[n];
-			for (int i = 0; i < n; ++i)
+			sz = new int[n];
+			for (int i = 0; i < n; ++i) {
 				parent[i] = i;
+				sz[i] = 1;
+			}
 		}
 
 		~UnionFind() {
 			delete[] parent;
+			delete[] sz;
 		}
 
 		int find(int p) {
 			assert(p >= 0 && p < count);
 			while (p != parent[p])
-				p = parent[p]; 
+				p = parent[p];
 			return p;
 		}
 
@@ -40,7 +44,12 @@ namespace UF2 {
 			if (pRoot == qRoot)
 				return;
 
-			parent[pRoot] = qRoot;
-		}
-	};
+			if (sz[pRoot] > sz[qRoot]) {
+				parent[qRoot] = pRoot;
+				sz[pRoot] += sz[qRoot];
+			}
+			else {
+				parent[pRoot] = qRoot;
+				sz[qRoot] += sz[pRoot];
+		};
 }

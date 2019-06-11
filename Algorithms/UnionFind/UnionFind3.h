@@ -1,31 +1,34 @@
 #pragma once
 
 #include <iostream>
-#include <vector>
 #include <cassert>
+#include <ctime>
 
-namespace UF2 {
-	// quick union
+namespace UF3 {
 	class UnionFind {
 	private:
 		int* parent;
+		int* sz;	// sz为以对应元素的根节点的总元素个数
 		int count;
-
 	public:
 		UnionFind(int n) : count(n) {
 			parent = new int[n];
-			for (int i = 0; i < n; ++i)
+			sz = new int[n];
+			for (int i = 0; i < n; ++i) {
 				parent[i] = i;
+				sz[i] = 1;
+			}
 		}
 
 		~UnionFind() {
 			delete[] parent;
+			delete[] sz;
 		}
 
 		int find(int p) {
 			assert(p >= 0 && p < count);
 			while (p != parent[p])
-				p = parent[p]; 
+				p = parent[p];
 			return p;
 		}
 
@@ -39,8 +42,14 @@ namespace UF2 {
 
 			if (pRoot == qRoot)
 				return;
-
-			parent[pRoot] = qRoot;
+			if (sz[pRoot] < sz[qRoot]) {
+				parent[pRoot] = qRoot;
+				sz[qRoot] += sz[pRoot];
+			}
+			else {
+				parent[qRoot] = pRoot;
+				sz[pRoot] += sz[qRoot];
+			}
 		}
 	};
 }
