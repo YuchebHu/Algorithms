@@ -33,6 +33,10 @@ namespace UF5 {
 				p = parent[p];
 			}
 			return p;
+		/*	if (p != parent[p]) {
+				parent[p] = find(parent[p]);
+			}
+			return parent[p];*/
 		}
 
 		bool isConnected(int p, int q) {
