@@ -1,51 +1,83 @@
 #pragma once
 
-#include <iostream>
 #include <vector>
 #include <cassert>
+#include <iostream>
 
-// 稠密图 - 邻接矩阵
+// 稠密图 -- 邻接矩阵
 class DenseGraph {
+
 private:
-	int numNode; // 顶点的个数
-	int numEdge; // 边的个数
-	bool isDirected; //是否是有向图
-	std::vector<std::vector<bool>> graph;
+	int n; // 结点的个数
+	int m; // 边的个数
+	bool directed; // 是不是有向图
+	std::vector<std::vector<bool>> graph; // 邻接矩阵
+
 public:
+	/*
+		int n : 节点的个数
+		bool directed : 是不是有向图
+	*/
 	DenseGraph(int n, bool directed)
-		: numNode(n), numEdge(0), isDirected(directed) {
+		: n(n), m(0), directed(directed) {
 		for (int i = 0; i < n; ++i) {
 			graph.push_back(std::vector<bool>(n, false));
 		}
 	}
 
-	~DenseGraph() {
+	~DenseGraph() {}
 
-	}
+	int V() { return n; }
 
-	int V() { return numNode; }
-
-	int E() { return numEdge; }
+	int E() { return m; }
 
 	void addEdge(int v, int w) {
-		assert(v >= 0 && v < numNode);
-		assert(w >= 0 && v < numEdge);
-		
+		assert(v >= 0 && v < n);
+		assert(w >= 0 && w < n);
+
 		if (hasEdge(v, w))
 			return;
 
 		graph[v][w] = true;
-		if (!isDirected) {
+
+		if (!directed) {
 			graph[w][v] = true;
 		}
 
-		++numEdge;
+		++m;
 	}
 
 	bool hasEdge(int v, int w) {
-		assert(v >= 0 && v < numNode);
-		assert(w >= 0 && w < numEdge);
+		assert(v >= 0 && v < n);
+		assert(w >= 0 && w < n);
+
 		return graph[v][w];
 	}
-};
 
+	class adjIterator {
+	private:
+		DenseGraph& G;
+		int v;
+		int index;
+	public:
+		adjIterator(DenseGraph& graph, int v) : G(graph), v(v), index(-1) {}
+
+		~adjIterator() {}
+
+		int begin() {
+			index = -1;
+			return next();
+		}
+
+		int next() {
+			for (index += 1; index < G.V(); ++index)
+				if (G.graph[v][index])
+					return index;
+			return -1;
+		}
+
+		bool end() {
+			return index >= G.V();
+		}
+	};
+};
