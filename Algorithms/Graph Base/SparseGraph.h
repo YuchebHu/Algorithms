@@ -4,46 +4,80 @@
 #include <vector>
 #include <cassert>
 #include <set>
-// Ï¡ÊèÍ¼ - ÁÚ½Ó±í
-class SpareseGraph {
+
+// Ï¡ÊèÍ¼ -- ÁÚ½Ó±í
+class SparseGraph {
 private:
-	int numNode;
-	int numEdge;
-	bool isDirected;
+	int n;
+	int m;
+	bool directed;
 	std::vector<std::vector<int>> graph;
-  
+
 public:
-	SpareseGraph(int n, bool directed)
-		: numNode(n), numEdge(0), isDirected(directed) {
-		for (int i = 0; i < n; ++i)
-			graph.push_back(std::vector<int>());
+	SparseGraph(int n, bool directed)
+		: n(n), m(0), directed(directed) {
+		graph = std::vector<std::vector<int>>(n, std::vector<int>());
 	}
 
-	~SpareseGraph() {}
+	~SparseGraph() {}
 
-	int V() { return numNode; }
+	int V() { return n; }
 
-	int E() { return numEdge; }
+	int E() { return m; }
 
 	void addEdge(int v, int w) {
-		assert(v >= 0 && v < numNode);
-		assert(w >= 0 && w < numEdge);
+		assert(v >= 0 && v < n);
+		assert(w >= 0 && w < n);
+
+		/*if (hasEdge(v, w))
+			return;*/
 
 		graph[v].push_back(w);
-		if (!isDirected)
-			graph[w].push_back(v);
 
-		++numEdge;
+		if (v != w && !directed) {
+			graph[w].push_back(v);
+		}
+
+		++m;
 	}
 
-	bool hasEdge(int v, int w) { // O(n)
-		assert(v >= 0 && v < numNode);
-		assert(w >= 0 && w < numEdge);
-		
-		for (int i : graph[v]) {
-			if (i == w)
+	bool hasEdge(int v, int w) {
+		assert(v >= 0 && v < n);
+		assert(w >= 0 && w < n);
+
+		for (int i = 0; i < graph[v].size(); ++i) {
+			if (graph[v][i] == w)
 				return true;
 		}
 		return false;
 	}
+
+	class adjIterator {
+	private:
+		SparseGraph& G;
+		int v;
+		int index;
+	public:
+		adjIterator(SparseGraph& graph, int v) : G(graph), v(v), index(0) {}
+
+		~adjIterator() {}
+
+		int begin() {
+			index = 0;
+			if (G.graph[v].size())
+				return G.graph[v][index];
+			return -1;
+		}
+
+		int next() {
+			++index;
+			if (index < G.graph[v].size())
+				return G.graph[v][index];
+			return -1;
+		}
+
+		bool end() {
+			return index >= G.graph[v].size();
+		}
+	};
 };
