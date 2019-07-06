@@ -19,6 +19,9 @@
     <Filter Include="源文件\UnionFind">
       <UniqueIdentifier>{a30f0c66-8165-4e26-ab77-435d063d9708}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Graph">
+      <UniqueIdentifier>{e14f053b-0f34-4ba4-bca9-79887c26019e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinarySearchTree\BinarySearch.cpp">
@@ -29,6 +32,9 @@
     </ClCompile>
     <ClCompile Include="UnionFind\main.cpp">
       <Filter>源文件\UnionFind</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph Base\main.cpp">
+      <Filter>源文件\Graph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +60,12 @@
     </ClInclude>
     <ClInclude Include="UnionFind\UnionFind5.h">
       <Filter>源文件\UnionFind</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph Base\DenseGraph.h">
+      <Filter>源文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph Base\SparseGraph.h">
+      <Filter>源文件\Graph</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
