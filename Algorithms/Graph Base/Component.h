@@ -42,6 +42,7 @@ public:
 
 	~Component() {
 		delete[] visited;
+		delete[] id;
 	}
 
 	int count() {
