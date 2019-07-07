@@ -48,6 +48,7 @@ public:
 		return ccount;
 	}
 
+	// 判断两个节点是否相连
 	bool isConnected(int v, int w) {
 		assert(v >= 0 && v < G.V());
 		assert(w >= 0 && w < G.V());
