@@ -41,6 +41,12 @@
     <Text Include="BinarySearchTree\bible.txt">
       <Filter>源文件\BinarySearchTree</Filter>
     </Text>
+    <Text Include="Graph Base\textG1.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="Graph Base\textG2.txt">
+      <Filter>资源文件</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UnionFind\UnionFind1.h">
@@ -65,6 +71,9 @@
       <Filter>源文件\Graph</Filter>
     </ClInclude>
     <ClInclude Include="Graph Base\SparseGraph.h">
+      <Filter>源文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph Base\ReadGraph.h">
       <Filter>源文件\Graph</Filter>
     </ClInclude>
   </ItemGroup>

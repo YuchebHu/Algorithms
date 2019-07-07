@@ -32,9 +32,12 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="BinarySearchTree\bible.txt" />
+    <Text Include="Graph Base\textG1.txt" />
+    <Text Include="Graph Base\textG2.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph Base\DenseGraph.h" />
+    <ClInclude Include="Graph Base\ReadGraph.h" />
     <ClInclude Include="Graph Base\SparseGraph.h" />
     <ClInclude Include="UnionFind\UnionFind1.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
