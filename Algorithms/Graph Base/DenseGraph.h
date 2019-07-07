@@ -20,9 +20,7 @@ public:
 	*/
 	DenseGraph(int n, bool directed)
 		: n(n), m(0), directed(directed) {
-		for (int i = 0; i < n; ++i) {
-			graph.push_back(std::vector<bool>(n, false));
-		}
+		graph = std::vector<std::vector<bool>>(n, std::vector<bool>(n, false));
 	}
 
 	~DenseGraph() {}
@@ -52,6 +50,17 @@ public:
 		assert(w >= 0 && w < n);
 
 		return graph[v][w];
+	}
+
+	void show() const {
+		for (int i = 0; i < n; ++i) {
+			std::cout << "vertex " << i << ":\t";
+			for (int j = 0; j < n; ++j) {
+				if (graph[i][j])
+					std::cout << j << "\t";
+			}
+			std::cout << std::endl;
+		}
 	}
 
 	class adjIterator {

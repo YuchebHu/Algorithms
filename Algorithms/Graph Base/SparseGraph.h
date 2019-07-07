@@ -52,6 +52,15 @@ public:
 		return false;
 	}
 
+	void show() const {
+		for (int i = 0; i < n; ++i) {
+			std::cout << "Vertex " << i << ":\t";
+			for (int j = 0; j < graph[i].size(); ++j)
+				std::cout << graph[i][j] << "\t";
+			std::cout << std::endl;
+		}
+	}
+
 	class adjIterator {
 	private:
 		SparseGraph& G;
