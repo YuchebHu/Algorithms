@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <iostream>
 #include <cassert>
@@ -22,6 +22,7 @@ private:
 				dfs(i);
 		}
 	}
+
 public:
 	Component(Graph& graph) : G(graph) {
 		visited = new bool[G.V()];
