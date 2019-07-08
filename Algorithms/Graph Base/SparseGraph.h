@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <iostream>
 #include <vector>
@@ -45,7 +45,7 @@ public:
 		assert(v >= 0 && v < n);
 		assert(w >= 0 && w < n);
 
-		for (int i = 0; i < graph[v].size(); ++i) {
+		for (size_t i = 0; i < graph[v].size(); ++i) {
 			if (graph[v][i] == w)
 				return true;
 		}
@@ -55,7 +55,7 @@ public:
 	void show() const {
 		for (int i = 0; i < n; ++i) {
 			std::cout << "Vertex " << i << ":\t";
-			for (int j = 0; j < graph[i].size(); ++j)
+			for (size_t j = 0; j < graph[i].size(); ++j)
 				std::cout << graph[i][j] << "\t";
 			std::cout << std::endl;
 		}
@@ -65,7 +65,7 @@ public:
 	private:
 		SparseGraph& G;
 		int v;
-		int index;
+		size_t index;
 	public:
 		adjIterator(SparseGraph& graph, int v) : G(graph), v(v), index(0) {}
 
