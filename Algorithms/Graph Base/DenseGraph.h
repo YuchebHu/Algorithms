@@ -1,22 +1,22 @@
-#pragma once
+ï»¿#pragma once
 
 #include <vector>
 #include <cassert>
 #include <iostream>
 
-// ³íÃÜÍ¼ -- ÁÚ½Ó¾ØÕó
+// ç¨ å¯†å›¾ -- é‚»æ¥çŸ©é˜µ
 class DenseGraph {
 
 private:
-	int n; // ½áµãµÄ¸öÊı
-	int m; // ±ßµÄ¸öÊı
-	bool directed; // ÊÇ²»ÊÇÓĞÏòÍ¼
-	std::vector<std::vector<bool>> graph; // ÁÚ½Ó¾ØÕó
+	int n; // ç»“ç‚¹çš„ä¸ªæ•°
+	int m; // è¾¹çš„ä¸ªæ•°
+	bool directed; // æ˜¯ä¸æ˜¯æœ‰å‘å›¾
+	std::vector<std::vector<bool>> graph; // é‚»æ¥çŸ©é˜µ
 
 public:
 	/*
-		int n : ½ÚµãµÄ¸öÊı
-		bool directed : ÊÇ²»ÊÇÓĞÏòÍ¼
+		int n : èŠ‚ç‚¹çš„ä¸ªæ•°
+		bool directed : æ˜¯ä¸æ˜¯æœ‰å‘å›¾
 	*/
 	DenseGraph(int n, bool directed)
 		: n(n), m(0), directed(directed) {

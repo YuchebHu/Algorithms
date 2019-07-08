@@ -1,11 +1,11 @@
-#pragma once
+﻿#pragma once
 
 #include <iostream>
 #include <vector>
 #include <cassert>
 #include <set>
 
-// ϡ��ͼ -- �ڽӱ�
+// 稀疏图 -- 邻接表
 class SparseGraph {
 private:
 	int n;

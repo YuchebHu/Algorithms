@@ -1,16 +1,16 @@
-#pragma once
+ï»¿#pragma once
 
 #include <iostream>
 #include <cassert>
 #include <vector>
 
-// ¼ÆËãÒ»¸öÍ¼ÖĞÓĞ¶àÉÙ¸öÁ¬Í¨·ÖÁ¿
+// è®¡ç®—ä¸€ä¸ªå›¾ä¸­æœ‰å¤šå°‘ä¸ªè¿é€šåˆ†é‡
 template <typename Graph>
 class Component {
 private:
 	Graph& G;
 	bool* visited;
-	int* id; // Ê¹ÓÃ²¢²é¼¯µÄË¼Ïë£¬ÅĞ¶ÏÁ½¸ö½ÚµãÊÇ·ñÁ¬Í¨£»
+	int* id; // ä½¿ç”¨å¹¶æŸ¥é›†çš„æ€æƒ³ï¼Œåˆ¤æ–­ä¸¤ä¸ªèŠ‚ç‚¹æ˜¯å¦è¿é€šï¼›
 	int ccount;
 
 	void dfs(int v) {
@@ -49,7 +49,7 @@ public:
 		return ccount;
 	}
 
-	// ÅĞ¶ÏÁ½¸ö½ÚµãÊÇ·ñÏàÁ¬
+	// åˆ¤æ–­ä¸¤ä¸ªèŠ‚ç‚¹æ˜¯å¦ç›¸è¿
 	bool isConnected(int v, int w) {
 		assert(v >= 0 && v < G.V());
 		assert(w >= 0 && w < G.V());
