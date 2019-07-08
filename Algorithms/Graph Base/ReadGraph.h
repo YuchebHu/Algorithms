@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -17,10 +17,10 @@ public:
 		
 		assert(file.is_open());
 		assert(getline(file, line));
-
+	
 		std::stringstream ss(line);
 		ss >> V >> E;
-
+	
 		assert(V == graph.V());
 
 		for (int i = 0; i < E; ++i) {
