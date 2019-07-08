@@ -79,5 +79,11 @@
     <ClInclude Include="Graph Base\Component.h">
       <Filter>源文件\Graph</Filter>
     </ClInclude>
+    <ClInclude Include="Graph Base\Path.h">
+      <Filter>源文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph Base\ShortestPath.h">
+      <Filter>源文件\Graph</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

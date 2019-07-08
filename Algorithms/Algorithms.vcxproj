@@ -38,7 +38,9 @@
   <ItemGroup>
     <ClInclude Include="Graph Base\Component.h" />
     <ClInclude Include="Graph Base\DenseGraph.h" />
+    <ClInclude Include="Graph Base\Path.h" />
     <ClInclude Include="Graph Base\ReadGraph.h" />
+    <ClInclude Include="Graph Base\ShortestPath.h" />
     <ClInclude Include="Graph Base\SparseGraph.h" />
     <ClInclude Include="UnionFind\UnionFind1.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
