@@ -22,6 +22,9 @@
     <Filter Include="源文件\Graph">
       <UniqueIdentifier>{e14f053b-0f34-4ba4-bca9-79887c26019e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\RedBlackTree">
+      <UniqueIdentifier>{cc9f6315-5f09-4833-8c70-e33a1efeca8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinarySearchTree\BinarySearch.cpp">
@@ -84,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="Graph Base\ShortestPath.h">
       <Filter>源文件\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="RedBlackTree\RedBlackTree.h">
+      <Filter>源文件\RedBlackTree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
