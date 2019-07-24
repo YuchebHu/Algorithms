@@ -28,6 +28,7 @@
     <ClCompile Include="Graph Base\main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="RedBlackTree\RedBlackTree.cpp" />
     <ClCompile Include="UnionFind\main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>

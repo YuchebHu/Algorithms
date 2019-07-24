@@ -39,6 +39,9 @@
     <ClCompile Include="Graph Base\main.cpp">
       <Filter>源文件\Graph</Filter>
     </ClCompile>
+    <ClCompile Include="RedBlackTree\RedBlackTree.cpp">
+      <Filter>源文件\RedBlackTree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="BinarySearchTree\bible.txt">
