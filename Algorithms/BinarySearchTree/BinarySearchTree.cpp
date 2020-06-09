@@ -24,7 +24,6 @@ private:
 			this->value = node->value;
 			this->left = node->left;
 			this->right = node->right;
-
 		}
 	};
 

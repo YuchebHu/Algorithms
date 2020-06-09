@@ -52,7 +52,7 @@ private:
 
 public:
 	RedBlackTree() : root(NULL), count(0), height(0) {
-		std::cout << "create!\n";
+		
 	}
 
 	~RedBlackTree() {

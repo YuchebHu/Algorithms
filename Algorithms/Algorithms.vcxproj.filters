@@ -25,6 +25,18 @@
     <Filter Include="源文件\RedBlackTree">
       <UniqueIdentifier>{cc9f6315-5f09-4833-8c70-e33a1efeca8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\String">
+      <UniqueIdentifier>{3358a966-0191-4f41-b508-3b706d36ed58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Sort">
+      <UniqueIdentifier>{2cb9b826-f41c-40a5-9a8f-78cd59eb7406}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Heap">
+      <UniqueIdentifier>{3557efb1-e66d-40ba-9420-d3a2acdf5f75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\B-Tree">
+      <UniqueIdentifier>{167ccdcb-c432-477e-8586-98ce6e5a912a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinarySearchTree\BinarySearch.cpp">
@@ -42,6 +54,30 @@
     <ClCompile Include="RedBlackTree\RedBlackTree.cpp">
       <Filter>源文件\RedBlackTree</Filter>
     </ClCompile>
+    <ClCompile Include="String\Key_Value_Counting_Method.cpp">
+      <Filter>源文件\String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\Least_Significant_Digit_First.cpp">
+      <Filter>源文件\String</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="heapSort1.cpp">
+      <Filter>源文件\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap.h">
+      <Filter>源文件\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexMaxHeap.cpp">
+      <Filter>源文件\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="B-Tree.cpp">
+      <Filter>源文件\B-Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件\RedBlackTree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="BinarySearchTree\bible.txt">
@@ -51,6 +87,12 @@
       <Filter>资源文件</Filter>
     </Text>
     <Text Include="Graph Base\textG2.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="textG3.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="textG4.txt">
       <Filter>资源文件</Filter>
     </Text>
   </ItemGroup>
@@ -93,6 +135,12 @@
     </ClInclude>
     <ClInclude Include="RedBlackTree\RedBlackTree.h">
       <Filter>源文件\RedBlackTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>源文件\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort1.h">
+      <Filter>源文件\Sort</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

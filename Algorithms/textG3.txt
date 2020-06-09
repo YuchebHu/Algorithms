@@ -1,0 +1,11 @@
+Anderson 2
+Brown 3
+Davis 3
+Garcia 4
+Harris 1
+Jackson 3
+Johnson 4
+Jones 3
+Martin 1
+Martinez 2
+Miller 2

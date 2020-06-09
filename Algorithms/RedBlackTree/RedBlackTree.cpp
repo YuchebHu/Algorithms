@@ -2,7 +2,7 @@
 
 int main() {
 	RedBlackTree<size_t, size_t> tree;
-	for (size_t i = 0; i < 1000000; ++i)
+	for (size_t i = 0; i < 127; ++i)
 		tree.insert(i, i);
 
 	//tree.preOrder();
